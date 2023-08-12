@@ -1,4 +1,4 @@
-import './App.css';
+import './SearchPage.css';
 import { Link } from "react-router-dom";
 import React, { useEffect } from 'react';
 import { useState } from 'react';
@@ -13,11 +13,11 @@ import $ from 'jquery';
 function DisplayResults(results) {
     return (
         <div name ="results"> 
-        <ul>
+        <ul className='ResultList'>
         {results.results.hits.map((element)=> 
         <li> 
             <Link to="/Image" state={{ data: element }}>
-            <img src={element.previewURL} alt="Girl in a jacket" width="500" height="600"/> 
+            <img src={element.previewURL} alt="Girl in a jacket" width="400" height="400"/> 
             </Link>
         </li>
         )}
@@ -71,26 +71,37 @@ export default function SearchPage () {
     
     if(Object.keys(data).length != 0) {
         return (
-            <div>
-        <button onClick={() => setData({})}>
+        <div className = "SearchPage">
+        
+
+        <h1 className='Label'>
+            Results
+        </h1>
+        <button onClick={() => setData({})} className="Submit" >
             Back to Search
         </button>
-
-        <h1>
-            results
-        </h1>
         <DisplayResults results = {data}/>
         </div>
         )
     } else {
         return (
+            <div className = "SearchPage">
             <form onSubmit={handleSubmit}>
-            <label>
-                Which image would you like to search?:
-                <input type="text" name="textbox" value = {searchString} onChange={e => {setSearchString(e.target.value)}} />
-            </label>
-            <input type="submit" value="Submit" />
+            <div>
+            <h1 className='Label'>
+                Which would you like to search?
+            </h1>
+            </div>
+            <div>
+            <input type="text" className="Textbox" value = {searchString} onChange={e => {setSearchString(e.target.value)}} />
+            </div>
+
+            <div>
+            <input type="submit" className="Submit" value="Submit" />
+            </div>
+
             </form>
+            </div>
         )
     }
 

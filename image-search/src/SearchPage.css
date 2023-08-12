@@ -1,0 +1,45 @@
+.SearchPage {
+    text-align: center;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+
+
+}
+
+.Label {
+    text-align: center;
+    color: white;
+    align-items: center;
+
+}
+
+.Textbox {
+    padding:10px;
+    border-radius:10px;
+    width:80%;
+
+}
+
+.Submit {
+    padding:10px;
+    border-radius:10px;
+    border:10px;
+    margin:10px;
+    width:40%;
+
+}
+
+.ResultList li{
+    display: inline;
+    float: left;
+    border:10px;
+    margin:10px;
+}
+
+.ResultList{
+    align-items: center;
+}

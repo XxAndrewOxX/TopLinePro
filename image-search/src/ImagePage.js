@@ -1,6 +1,8 @@
 import { useLocation } from 'react-router-dom'
+import { useNavigate }  from "react-router-dom"
 function ImagePage()  {
     const location = useLocation()
+    const navigate = useNavigate();
     console.log(location.state.data)
     return (
     <div>
@@ -25,6 +27,10 @@ function ImagePage()  {
         Views: {location.state.data.views}
         </h5>
         </div>
+
+    <button onClick = {() => {navigate(-1)}}>
+        Go Back to Search!
+    </button>
     </div>
     )
 
