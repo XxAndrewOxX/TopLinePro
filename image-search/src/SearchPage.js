@@ -89,7 +89,7 @@ export default function SearchPage () {
             <form onSubmit={handleSubmit}>
             <div>
             <h1 className='Label'>
-                Which would you like to search?
+                What would you like to search?
             </h1>
             </div>
             <div>
